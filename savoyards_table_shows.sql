@@ -1,24 +1,3 @@
--- phpMyAdmin SQL Dump
--- version 4.6.6deb5
--- https://www.phpmyadmin.net/
---
--- Host: localhost:3306
--- Generation Time: Nov 07, 2018 at 04:36 PM
--- Server version: 10.1.34-MariaDB-0ubuntu0.18.04.1
--- PHP Version: 7.1.23-4+ubuntu18.04.1+deb.sury.org+1
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Database: `savoyards`
---
 
 -- --------------------------------------------------------
 
@@ -60,26 +39,3 @@ INSERT INTO `shows` (`show_id`, `name`, `full_name`, `librettist`, `composer`, `
 (17, 'Amahl and the Night Visitors', 'Amahl and the Night Visitors', 'Gian Carlo Menotti', 'Gian Carlo Menotti', '1951-12-24', 'A young disabled boy named Amahl, who lives in poverty with his widowed mother near Bethlehem, sees a bright star in the sky one night and tells his mother to go look, but she brushes him off, buried in concern over their bleak future and lack of means with which to support themselves. That night, three kings come across their meager hut and seek shelter, for they have traveled long and far following the star of which Amahl had spoken. They bring with them treasure and gifts to give to “the Child” who has just been born and who will reign over all. Blinded by the lure of the gold and what it could do for her family. the Mother attempts to steal just a bit of the treasure, but is caught red-handed. What no one expects is a gift far greater than gold--blessed by the Child, Amahl finds himself suddenly cured of his disability. '),
 (18, 'The Telephone', 'The Telephone, or L\'Amour à trois', 'Gian Carlo Menotti', 'Gian Carlo Menotti', '1947-02-18', 'Ben, bearing a gift, comes to visit Lucy at her apartment; he wants to propose to her before he leaves on a trip. Despite his attempts to get her attention for sufficient time to ask his question, Lucy is occupied with interminable conversations on the telephone. Between her calls, when Lucy leaves the room, Ben even tries to cut the telephone cord - unsuccessfully. Not wanting to miss his train, Ben leaves without asking Lucy for her hand in marriage. But Ben makes one last attempt: He calls Lucy from a telephone booth outside on the street and makes his proposal. She consents, and the two join in a romantic duet over the phone line, at the end of which Lucy makes sure that Ben remembers her phone number.'),
 (19, 'Gianni Schicchi', 'Gianni Schicchi', 'Giovacchino Forzano', 'Giacomo Puccini', '1918-12-14', 'Buoso Donati has just died, surrounded by his relatives, who have heard that he has left all his money to the monks. They search for the will and Rinuccio, who finds it, refuses to hand it over till his Aunt Zita promises to let him marry Lauretta, daughter of Gianni Schicchi. He sends for Schicchi and when they have read the will and found their fears to be true, tells them that only Schicchi has the ingenuity to save them.\r\nAlthough they resent Schicchi as an upstart, when he arrives with Lauretta they beg him to help them. Resenting their attitude, he only agrees when Lauretta appeals to him, since her happiness depends on it. Since no one outside the family knows that Buoso is dead, Schicchi disguises himself as Buoso, summons a lawyer and dictates a will. The relatives all have particular properties in mind and he leaves each one as requested, but reserves for himself the prize items of the house, a mule and the mill at Signa.\r\nThe furious relatives are powerless to stop him, as he reminds them that the penalty for falsifying a will is having the right hand chopped off and banishment from Florence.\r\nHe chases them away, except for Rinuccio, who remains with Lauretta. Schicchi addresses the audience, begging its indulgence for his sins since it has produced such a happy result.');
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `shows`
---
-ALTER TABLE `shows`
-  ADD PRIMARY KEY (`show_id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `shows`
---
-ALTER TABLE `shows`
-  MODIFY `show_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
