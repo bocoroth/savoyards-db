@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 09, 2018 at 04:51 PM
+-- Generation Time: Nov 16, 2018 at 03:35 PM
 -- Server version: 10.1.34-MariaDB-0ubuntu0.18.04.1
--- PHP Version: 7.1.23-4+ubuntu18.04.1+deb.sury.org+1
+-- PHP Version: 7.1.24-1+ubuntu18.04.1+deb.sury.org+1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";

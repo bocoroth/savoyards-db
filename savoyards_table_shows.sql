@@ -5,14 +5,15 @@
 -- Table structure for table `shows`
 --
 
+DROP TABLE IF EXISTS `shows`;
 CREATE TABLE `shows` (
   `show_id` int(11) NOT NULL,
-  `name` varchar(127) NOT NULL,
+  `name` varchar(255) NOT NULL,
   `full_name` varchar(255) DEFAULT NULL,
-  `librettist` varchar(127) DEFAULT NULL,
-  `composer` varchar(127) DEFAULT NULL,
+  `librettist` varchar(255) DEFAULT NULL,
+  `composer` varchar(255) DEFAULT NULL,
   `first_performed` date DEFAULT NULL,
-  `synopsis` mediumtext
+  `synopsis` text
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
