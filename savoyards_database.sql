@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 18, 2018 at 10:58 PM
+-- Generation Time: Nov 20, 2018 at 05:09 PM
 -- Server version: 10.1.34-MariaDB-0ubuntu0.18.04.1
--- PHP Version: 7.1.23-4+ubuntu18.04.1+deb.sury.org+1
+-- PHP Version: 7.1.24-1+ubuntu18.04.1+deb.sury.org+1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -19,5 +19,5 @@ SET time_zone = "+00:00";
 --
 -- Database: `savoyards`
 --
-CREATE DATABASE IF NOT EXISTS `savoyards` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+CREATE DATABASE IF NOT EXISTS `savoyards` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 USE `savoyards`;

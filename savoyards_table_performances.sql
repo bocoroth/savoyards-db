@@ -14,10 +14,10 @@ CREATE TABLE `performances` (
   `year` year(4) NOT NULL,
   `season` int(11) NOT NULL,
   `opening_date` date NOT NULL,
-  `venue` varchar(255) NOT NULL,
-  `description` mediumtext NOT NULL,
-  `footnotes` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `venue` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `description` mediumtext COLLATE utf8_unicode_ci NOT NULL,
+  `footnotes` text COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `performances`

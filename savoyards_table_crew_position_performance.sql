@@ -11,4 +11,4 @@ CREATE TABLE `crew_position_performance` (
   `crew_id` int(11) NOT NULL,
   `position_id` int(11) NOT NULL,
   `performance_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;

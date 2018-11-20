@@ -10,7 +10,7 @@ CREATE TABLE `performance_dates` (
   `date_id` int(11) NOT NULL,
   `performance_id` int(11) NOT NULL,
   `performance_date` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `performance_dates`

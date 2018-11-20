@@ -11,7 +11,7 @@ CREATE TABLE `instrument_musician_performance` (
   `instrument_id` int(11) NOT NULL,
   `musician_id` int(11) NOT NULL,
   `performance_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `instrument_musician_performance`

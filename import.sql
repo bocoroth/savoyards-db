@@ -1,3 +1,348 @@
+-- phpMyAdmin SQL Dump
+-- version 4.6.6deb5
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost:3306
+-- Generation Time: Nov 20, 2018 at 05:09 PM
+-- Server version: 10.1.34-MariaDB-0ubuntu0.18.04.1
+-- PHP Version: 7.1.24-1+ubuntu18.04.1+deb.sury.org+1
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `savoyards`
+--
+CREATE DATABASE IF NOT EXISTS `savoyards` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+USE `savoyards`;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `actorrole_date`
+--
+
+DROP TABLE IF EXISTS `actorrole_date`;
+CREATE TABLE `actorrole_date` (
+  `ard_id` int(11) NOT NULL,
+  `ar_id` int(11) NOT NULL,
+  `date_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `actor_role`
+--
+
+DROP TABLE IF EXISTS `actor_role`;
+CREATE TABLE `actor_role` (
+  `ar_id` int(11) NOT NULL,
+  `actor_id` int(11) NOT NULL,
+  `role_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `actors`
+--
+
+DROP TABLE IF EXISTS `actors`;
+CREATE TABLE `actors` (
+  `actor_id` int(11) NOT NULL,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `crew_position_performance`
+--
+
+DROP TABLE IF EXISTS `crew_position_performance`;
+CREATE TABLE `crew_position_performance` (
+  `cpp_id` int(11) NOT NULL,
+  `crew_id` int(11) NOT NULL,
+  `position_id` int(11) NOT NULL,
+  `performance_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `crew`
+--
+
+DROP TABLE IF EXISTS `crew`;
+CREATE TABLE `crew` (
+  `crew_id` int(11) NOT NULL,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `instrument_musician_performance`
+--
+
+DROP TABLE IF EXISTS `instrument_musician_performance`;
+CREATE TABLE `instrument_musician_performance` (
+  `imp_id` int(11) NOT NULL,
+  `instrument_id` int(11) NOT NULL,
+  `musician_id` int(11) NOT NULL,
+  `performance_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `instrument_musician_performance`
+--
+
+INSERT INTO `instrument_musician_performance` (`imp_id`, `instrument_id`, `musician_id`, `performance_id`) VALUES
+(1, 1, 1, 1),
+(2, 1, 2, 1),
+(3, 1, 3, 1),
+(4, 1, 4, 1),
+(5, 1, 5, 1),
+(6, 1, 6, 1),
+(7, 1, 7, 1),
+(8, 1, 8, 1),
+(9, 1, 9, 1),
+(10, 2, 10, 1),
+(11, 2, 11, 1),
+(12, 2, 12, 1),
+(13, 3, 13, 1),
+(14, 3, 14, 1),
+(15, 3, 15, 1),
+(16, 3, 16, 1),
+(17, 3, 17, 1),
+(18, 4, 18, 1),
+(19, 5, 19, 1),
+(20, 5, 20, 1),
+(21, 5, 21, 1),
+(22, 5, 22, 1),
+(23, 7, 23, 1),
+(24, 7, 24, 1),
+(25, 8, 25, 1),
+(26, 8, 26, 1),
+(27, 8, 27, 1),
+(28, 8, 28, 1),
+(29, 9, 29, 1),
+(30, 10, 30, 1),
+(31, 10, 31, 1),
+(32, 10, 32, 1),
+(33, 11, 33, 1),
+(34, 11, 34, 1),
+(35, 11, 35, 1),
+(36, 11, 36, 1),
+(37, 12, 37, 1),
+(38, 13, 38, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `instruments`
+--
+
+DROP TABLE IF EXISTS `instruments`;
+CREATE TABLE `instruments` (
+  `instrument_id` int(11) NOT NULL,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `instruments`
+--
+
+INSERT INTO `instruments` (`instrument_id`, `name`) VALUES
+(1, 'Violin'),
+(2, 'Viola'),
+(3, 'Cello'),
+(4, 'Bass'),
+(5, 'Flute'),
+(6, 'Piccolo'),
+(7, 'Oboe'),
+(8, 'Clarinet'),
+(9, 'Bassoon'),
+(10, 'Horn'),
+(11, 'Trumpet'),
+(12, 'Trombone'),
+(13, 'Percussion');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `musicians`
+--
+
+DROP TABLE IF EXISTS `musicians`;
+CREATE TABLE `musicians` (
+  `musician_id` int(11) NOT NULL,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `musicians`
+--
+
+INSERT INTO `musicians` (`musician_id`, `name`) VALUES
+(1, 'Morton Blinn'),
+(2, 'Evalyn Clough'),
+(3, 'Lois Dietrich'),
+(4, 'Helen Eberle'),
+(5, 'Robert Eisner'),
+(6, 'Mary Mechlin'),
+(7, 'Nina Kay Menning'),
+(8, 'Sister M. Serafina'),
+(9, 'Fred Wachs'),
+(10, 'Eve Cohen'),
+(11, 'Harvey Meieran'),
+(12, 'Phillip Wion'),
+(13, 'Marjorie Eisner'),
+(14, 'Ruth Ann Eisner'),
+(15, 'Michael Golde'),
+(16, 'Mary Ellen Pochapsky'),
+(17, 'Diane Ritchey'),
+(18, 'Martha Flaherty'),
+(19, 'David Arons'),
+(20, 'Sue Blinn'),
+(21, 'John Coltman'),
+(22, 'Susan Nelson'),
+(23, 'Kathy Guthrie'),
+(24, 'Susan Holmes'),
+(25, 'Debra Daniel'),
+(26, 'Ed Dzenis'),
+(27, 'Eric Dzenis'),
+(28, 'Malcolm Slifkin'),
+(29, 'Bill Woodward'),
+(30, 'James Oakes'),
+(31, 'Carol Pochapsky'),
+(32, 'Sandra Rasco'),
+(33, 'Jeanne Humes'),
+(34, 'Don Kortlandt'),
+(35, 'Karl Kortlandt'),
+(36, 'Joe Murphy'),
+(37, 'Kenneth Juell'),
+(38, 'Bill Panos');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `performance_dates`
+--
+
+DROP TABLE IF EXISTS `performance_dates`;
+CREATE TABLE `performance_dates` (
+  `date_id` int(11) NOT NULL,
+  `performance_id` int(11) NOT NULL,
+  `performance_date` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `performance_dates`
+--
+
+INSERT INTO `performance_dates` (`date_id`, `performance_id`, `performance_date`) VALUES
+(1, 1, '1979-11-08'),
+(2, 1, '1979-11-10'),
+(3, 1, '1979-11-11'),
+(4, 1, '1979-11-13'),
+(5, 1, '1979-11-14'),
+(6, 1, '1979-11-17'),
+(7, 1, '1979-11-18');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `performances`
+--
+
+DROP TABLE IF EXISTS `performances`;
+CREATE TABLE `performances` (
+  `performance_id` int(11) NOT NULL,
+  `show_id` int(11) NOT NULL,
+  `active` bit(1) NOT NULL DEFAULT b'1',
+  `confirmed` bit(1) NOT NULL DEFAULT b'1',
+  `year` year(4) NOT NULL,
+  `season` int(11) NOT NULL,
+  `opening_date` date NOT NULL,
+  `venue` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `description` mediumtext COLLATE utf8_unicode_ci NOT NULL,
+  `footnotes` text COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `performances`
+--
+
+INSERT INTO `performances` (`performance_id`, `show_id`, `active`, `confirmed`, `year`, `season`, `opening_date`, `venue`, `description`, `footnotes`) VALUES
+(1, 6, b'1', b'1', 1979, 41, '1979-11-08', 'The Jewish Community Center', '', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `positions`
+--
+
+DROP TABLE IF EXISTS `positions`;
+CREATE TABLE `positions` (
+  `position_id` int(11) NOT NULL,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `roles`
+--
+
+DROP TABLE IF EXISTS `roles`;
+CREATE TABLE `roles` (
+  `role_id` int(11) NOT NULL,
+  `show_id` int(11) NOT NULL,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `subtitle` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `vocal_part` enum('Soprano','Alto','Tenor','Baritone','Bass','SA','TB','Speaking','Silent','SATB','Mezzo-Soprano','Contralto','Countertenor','Treble','Coloratura Soprano') COLLATE utf8_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `roles`
+--
+
+INSERT INTO `roles` (`role_id`, `show_id`, `name`, `subtitle`, `vocal_part`) VALUES
+(1, 1, 'Jupiter', 'Aged Deity', NULL),
+(2, 1, 'Apollo', 'Aged Deity', NULL),
+(3, 1, 'Mars', 'Aged Deity', NULL),
+(4, 1, 'Diana', 'Aged Deity', NULL),
+(5, 1, 'Venus', 'Aged Deity', NULL),
+(6, 1, 'Mercury', 'Aged Deity', NULL),
+(7, 1, 'Thespis', 'Manager of a Travelling Theatrical Co.', NULL),
+(8, 1, 'Sillimon', 'his Stage Manager', NULL),
+(9, 1, 'Timidon', 'Thespian', NULL),
+(10, 1, 'Tipseion', 'Thespian', NULL),
+(11, 1, 'Preposteros', 'Thespian', NULL),
+(12, 1, 'Stupidas', 'Thespian', NULL),
+(13, 1, 'Sparkeion', 'Thespian', NULL),
+(14, 1, 'Nicemis', 'Thespian', NULL),
+(15, 1, 'Pretteia', 'Thespian', NULL),
+(16, 1, 'Daphne', 'Thespian', NULL),
+(17, 1, 'Cymon', 'Thespian', NULL),
+(18, 2, 'Angelina', 'The Plaintiff', 'Soprano'),
+(19, 2, 'Edwin', 'The Defendant', 'Tenor'),
+(20, 2, 'The Learned Judge', NULL, 'Baritone'),
+(21, 2, 'Counsel for the Plaintiff', NULL, 'Baritone'),
+(22, 2, 'Usher', NULL, 'Baritone'),
+(23, 2, 'Foreman of the Jury', NULL, 'Bass'),
+(24, 2, 'First Bridesmaid', NULL, 'Soprano'),
+(25, 2, 'Associate', NULL, 'Silent'),
+(26, 2, 'Bridesmaids', NULL, 'SA'),
+(27, 2, 'Gentlemen of the Jury', NULL, 'TB');
 
 -- --------------------------------------------------------
 
@@ -40,3 +385,228 @@ INSERT INTO `shows` (`show_id`, `name`, `full_name`, `librettist`, `composer`, `
 (17, 'Amahl and the Night Visitors', 'Amahl and the Night Visitors', 'Gian Carlo Menotti', 'Gian Carlo Menotti', '1951-12-24', 'A young disabled boy named Amahl, who lives in poverty with his widowed mother near Bethlehem, sees a bright star in the sky one night and tells his mother to go look, but she brushes him off, buried in concern over their bleak future and lack of means with which to support themselves. That night, three kings come across their meager hut and seek shelter, for they have traveled long and far following the star of which Amahl had spoken. They bring with them treasure and gifts to give to “the Child” who has just been born and who will reign over all. Blinded by the lure of the gold and what it could do for her family. the Mother attempts to steal just a bit of the treasure, but is caught red-handed. What no one expects is a gift far greater than gold--blessed by the Child, Amahl finds himself suddenly cured of his disability. '),
 (18, 'The Telephone', 'The Telephone, or L\'Amour à trois', 'Gian Carlo Menotti', 'Gian Carlo Menotti', '1947-02-18', 'Ben, bearing a gift, comes to visit Lucy at her apartment; he wants to propose to her before he leaves on a trip. Despite his attempts to get her attention for sufficient time to ask his question, Lucy is occupied with interminable conversations on the telephone. Between her calls, when Lucy leaves the room, Ben even tries to cut the telephone cord - unsuccessfully. Not wanting to miss his train, Ben leaves without asking Lucy for her hand in marriage. But Ben makes one last attempt: He calls Lucy from a telephone booth outside on the street and makes his proposal. She consents, and the two join in a romantic duet over the phone line, at the end of which Lucy makes sure that Ben remembers her phone number.'),
 (19, 'Gianni Schicchi', 'Gianni Schicchi', 'Giovacchino Forzano', 'Giacomo Puccini', '1918-12-14', 'Buoso Donati has just died, surrounded by his relatives, who have heard that he has left all his money to the monks. They search for the will and Rinuccio, who finds it, refuses to hand it over till his Aunt Zita promises to let him marry Lauretta, daughter of Gianni Schicchi. He sends for Schicchi and when they have read the will and found their fears to be true, tells them that only Schicchi has the ingenuity to save them.\r\nAlthough they resent Schicchi as an upstart, when he arrives with Lauretta they beg him to help them. Resenting their attitude, he only agrees when Lauretta appeals to him, since her happiness depends on it. Since no one outside the family knows that Buoso is dead, Schicchi disguises himself as Buoso, summons a lawyer and dictates a will. The relatives all have particular properties in mind and he leaves each one as requested, but reserves for himself the prize items of the house, a mule and the mill at Signa.\r\nThe furious relatives are powerless to stop him, as he reminds them that the penalty for falsifying a will is having the right hand chopped off and banishment from Florence.\r\nHe chases them away, except for Rinuccio, who remains with Lauretta. Schicchi addresses the audience, begging its indulgence for his sins since it has produced such a happy result.');
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `VIEW_instrument_musician_performance`
+--
+DROP TABLE IF EXISTS `VIEW_instrument_musician_performance`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`matt`@`localhost` SQL SECURITY DEFINER VIEW `VIEW_instrument_musician_performance`  AS  select `IMP`.`imp_id` AS `imp_id`,`I`.`name` AS `instrument`,`M`.`name` AS `musician`,`S`.`name` AS `show`,`P`.`year` AS `year` from ((((`instrument_musician_performance` `IMP` join `performances` `P` on((`IMP`.`performance_id` = `P`.`performance_id`))) join `musicians` `M` on((`IMP`.`musician_id` = `M`.`musician_id`))) join `instruments` `I` on((`IMP`.`instrument_id` = `I`.`instrument_id`))) join `shows` `S` on((`P`.`show_id` = `S`.`show_id`))) ;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `actorrole_date`
+--
+ALTER TABLE `actorrole_date`
+  ADD PRIMARY KEY (`ard_id`),
+  ADD KEY `ix_ar_id` (`ar_id`),
+  ADD KEY `ix_date_id` (`date_id`);
+
+--
+-- Indexes for table `actors`
+--
+ALTER TABLE `actors`
+  ADD PRIMARY KEY (`actor_id`);
+
+--
+-- Indexes for table `actor_role`
+--
+ALTER TABLE `actor_role`
+  ADD PRIMARY KEY (`ar_id`),
+  ADD KEY `ix_actor_id` (`actor_id`),
+  ADD KEY `ix_role_id` (`role_id`);
+
+--
+-- Indexes for table `crew`
+--
+ALTER TABLE `crew`
+  ADD PRIMARY KEY (`crew_id`);
+
+--
+-- Indexes for table `crew_position_performance`
+--
+ALTER TABLE `crew_position_performance`
+  ADD PRIMARY KEY (`cpp_id`),
+  ADD KEY `ix_crew_id` (`crew_id`),
+  ADD KEY `ix_position_id` (`position_id`),
+  ADD KEY `ix_performance_id` (`performance_id`);
+
+--
+-- Indexes for table `instruments`
+--
+ALTER TABLE `instruments`
+  ADD PRIMARY KEY (`instrument_id`);
+
+--
+-- Indexes for table `instrument_musician_performance`
+--
+ALTER TABLE `instrument_musician_performance`
+  ADD PRIMARY KEY (`imp_id`),
+  ADD KEY `ix_instrument_id` (`instrument_id`),
+  ADD KEY `ix_musician_id` (`musician_id`),
+  ADD KEY `ix_performance_id` (`performance_id`);
+
+--
+-- Indexes for table `musicians`
+--
+ALTER TABLE `musicians`
+  ADD PRIMARY KEY (`musician_id`);
+
+--
+-- Indexes for table `performances`
+--
+ALTER TABLE `performances`
+  ADD PRIMARY KEY (`performance_id`),
+  ADD KEY `ix_show_id` (`show_id`);
+
+--
+-- Indexes for table `performance_dates`
+--
+ALTER TABLE `performance_dates`
+  ADD PRIMARY KEY (`date_id`),
+  ADD KEY `ix_performance_id` (`performance_id`);
+
+--
+-- Indexes for table `positions`
+--
+ALTER TABLE `positions`
+  ADD PRIMARY KEY (`position_id`);
+
+--
+-- Indexes for table `roles`
+--
+ALTER TABLE `roles`
+  ADD PRIMARY KEY (`role_id`),
+  ADD KEY `ix_show_id` (`show_id`) USING BTREE;
+
+--
+-- Indexes for table `shows`
+--
+ALTER TABLE `shows`
+  ADD PRIMARY KEY (`show_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `actorrole_date`
+--
+ALTER TABLE `actorrole_date`
+  MODIFY `ard_id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `actors`
+--
+ALTER TABLE `actors`
+  MODIFY `actor_id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `actor_role`
+--
+ALTER TABLE `actor_role`
+  MODIFY `ar_id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `crew`
+--
+ALTER TABLE `crew`
+  MODIFY `crew_id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `crew_position_performance`
+--
+ALTER TABLE `crew_position_performance`
+  MODIFY `cpp_id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `instruments`
+--
+ALTER TABLE `instruments`
+  MODIFY `instrument_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+--
+-- AUTO_INCREMENT for table `instrument_musician_performance`
+--
+ALTER TABLE `instrument_musician_performance`
+  MODIFY `imp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+--
+-- AUTO_INCREMENT for table `musicians`
+--
+ALTER TABLE `musicians`
+  MODIFY `musician_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+--
+-- AUTO_INCREMENT for table `performances`
+--
+ALTER TABLE `performances`
+  MODIFY `performance_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `performance_dates`
+--
+ALTER TABLE `performance_dates`
+  MODIFY `date_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+--
+-- AUTO_INCREMENT for table `positions`
+--
+ALTER TABLE `positions`
+  MODIFY `position_id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `roles`
+--
+ALTER TABLE `roles`
+  MODIFY `role_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+--
+-- AUTO_INCREMENT for table `shows`
+--
+ALTER TABLE `shows`
+  MODIFY `show_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `actorrole_date`
+--
+ALTER TABLE `actorrole_date`
+  ADD CONSTRAINT `fk_ard_ar` FOREIGN KEY (`ar_id`) REFERENCES `actor_role` (`ar_id`),
+  ADD CONSTRAINT `fk_ard_date` FOREIGN KEY (`date_id`) REFERENCES `performance_dates` (`date_id`);
+
+--
+-- Constraints for table `actor_role`
+--
+ALTER TABLE `actor_role`
+  ADD CONSTRAINT `fk_ar_actor` FOREIGN KEY (`actor_id`) REFERENCES `actors` (`actor_id`),
+  ADD CONSTRAINT `fk_ar_role` FOREIGN KEY (`role_id`) REFERENCES `roles` (`role_id`);
+
+--
+-- Constraints for table `crew_position_performance`
+--
+ALTER TABLE `crew_position_performance`
+  ADD CONSTRAINT `fk_cpp_crew` FOREIGN KEY (`crew_id`) REFERENCES `crew` (`crew_id`),
+  ADD CONSTRAINT `fk_cpp_performance` FOREIGN KEY (`performance_id`) REFERENCES `performances` (`performance_id`),
+  ADD CONSTRAINT `fk_cpp_position` FOREIGN KEY (`position_id`) REFERENCES `positions` (`position_id`);
+
+--
+-- Constraints for table `instrument_musician_performance`
+--
+ALTER TABLE `instrument_musician_performance`
+  ADD CONSTRAINT `fk_imp_instrument` FOREIGN KEY (`instrument_id`) REFERENCES `instruments` (`instrument_id`),
+  ADD CONSTRAINT `fk_imp_musician` FOREIGN KEY (`instrument_id`) REFERENCES `instruments` (`instrument_id`),
+  ADD CONSTRAINT `fk_imp_performance` FOREIGN KEY (`performance_id`) REFERENCES `performances` (`performance_id`);
+
+--
+-- Constraints for table `performances`
+--
+ALTER TABLE `performances`
+  ADD CONSTRAINT `fk_performance_show_id` FOREIGN KEY (`show_id`) REFERENCES `shows` (`show_id`);
+
+--
+-- Constraints for table `performance_dates`
+--
+ALTER TABLE `performance_dates`
+  ADD CONSTRAINT `fk_performance_date` FOREIGN KEY (`performance_id`) REFERENCES `performances` (`performance_id`);
+
+--
+-- Constraints for table `roles`
+--
+ALTER TABLE `roles`
+  ADD CONSTRAINT `fk_role_show_id` FOREIGN KEY (`show_id`) REFERENCES `shows` (`show_id`);
